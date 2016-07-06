@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Meet Mes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Address 1</th>
+      <th>Address 2</th>
+      <th>Term</th>
+      <th>Results</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @meet_mes.each do |meet_me| %>
+      <tr>
+        <td><%= meet_me.address_1 %></td>
+        <td><%= meet_me.address_2 %></td>
+        <td><%= meet_me.term %></td>
+        <td><%= meet_me.results %></td>
+        <td><%= link_to 'Show', meet_me %></td>
+        <td><%= link_to 'Edit', edit_meet_me_path(meet_me) %></td>
+        <td><%= link_to 'Destroy', meet_me, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Meet Me', new_meet_me_path %>

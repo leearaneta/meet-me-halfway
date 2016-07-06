@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @reverse_location.address %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @reverse_location.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @reverse_location.longitude %>
+</p>
+
+<%= link_to 'Edit', edit_reverse_location_path(@reverse_location) %> |
+<%= link_to 'Back', reverse_locations_path %>

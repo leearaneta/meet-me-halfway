@@ -1,0 +1,37 @@
+<%= form_for(meet_me) do |f| %>
+  <% if meet_me.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(meet_me.errors.count, "error") %> prohibited this meet_me from being saved:</h2>
+
+      <ul>
+      <% meet_me.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :address_1 %>
+    <%= f.text_field :address_1 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :address_2 %>
+    <%= f.text_field :address_2 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :term %>
+    <%= f.text_field :term %>
+  </div>
+
+  <div class="field">
+    <%= f.label :results %>
+    <%= f.number_field :results %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

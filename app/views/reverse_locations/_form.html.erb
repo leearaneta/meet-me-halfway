@@ -1,0 +1,32 @@
+<%= form_for(reverse_location) do |f| %>
+  <% if reverse_location.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(reverse_location.errors.count, "error") %> prohibited this reverse_location from being saved:</h2>
+
+      <ul>
+      <% reverse_location.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :address %>
+    <%= f.text_field :address %>
+  </div>
+
+  <div class="field">
+    <%= f.label :latitude %>
+    <%= f.text_field :latitude %>
+  </div>
+
+  <div class="field">
+    <%= f.label :longitude %>
+    <%= f.text_field :longitude %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

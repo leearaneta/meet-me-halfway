@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Reverse Locations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Address</th>
+      <th>Latitude</th>
+      <th>Longitude</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @reverse_locations.each do |reverse_location| %>
+      <tr>
+        <td><%= reverse_location.address %></td>
+        <td><%= reverse_location.latitude %></td>
+        <td><%= reverse_location.longitude %></td>
+        <td><%= link_to 'Show', reverse_location %></td>
+        <td><%= link_to 'Edit', edit_reverse_location_path(reverse_location) %></td>
+        <td><%= link_to 'Destroy', reverse_location, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Reverse Location', new_reverse_location_path %>
