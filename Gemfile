@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'humanize'
 gem 'geocoder'
 gem 'yelp', require: 'yelp'
 gem 'better_errors'

@@ -12,26 +12,26 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :address_1 %>
+    <%= f.label :"Your Address" %>
     <%= f.text_field :address_1 %>
   </div>
 
   <div class="field">
-    <%= f.label :address_2 %>
+    <%= f.label :"Your Friend's Address" %>
     <%= f.text_field :address_2 %>
   </div>
 
   <div class="field">
-    <%= f.label :term %>
+    <%= f.label :"Category" %>
     <%= f.text_field :term %>
   </div>
 
   <div class="field">
-    <%= f.label :results %>
+    <%= f.label :"Number of Results" %>
     <%= f.number_field :results %>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Submit' %>
   </div>
 <% end %>
