@@ -1,14 +1,17 @@
 <h2><%= "#{@yelp.count} Places for #{@term.capitalize}"%></h2>
-<h4><%="Between #{@meet_me.address_1} and #{@meet_me.address_2}" %></h4>
+<h4><%="Between #{@meet_me.address_1} and #{@meet_me.address_2}" %></h4><p>
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
 <% @yelp.each do |business|%>
-<h2><%= link_to business.name, business.url%></h2>
-<p><%= business.location.display_address.join(" ") %><p>
-<p><%= business.display_phone.slice!(1..14)%><p>
-<p><%= "#{business.rating} stars with #{business.review_count} reviews"%><p>
-<p><%= business.snippet_text%><p>
-<!-- <p><img src= <%=business.image_url%>><p> -->
-
+<h2><%= link_to business.name, business.url%></h2><br>
+<h7> <%= business.location.display_address.join(" ") %></h7><br>
+<h7> <%= business.display_phone.slice!(1..14)%></h7><br>
+<h7> <%= "#{business.rating} stars with #{business.review_count} reviews"%></h7><br>
+<h7><%= "\"#{business.snippet_text}\""%></h7><p>
+. . . . . . .
 <% end %>
+<p>
+<h7>Results from Yelp.com</h7>
+<p>
 <!-- - name
 - address
 - rating

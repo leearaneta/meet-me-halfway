@@ -20,12 +20,23 @@ body {
 	text-align: center;
     margin: auto;
     width: 50%;
-    color:#32415A;
+    color:#FFFFFF;
+    background-image: url("sky.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100%;
     background-color:#C7D6E1; 
     font-family: Andale Mono
 }
+/*#32415A*/
 
 h6 {
+    font-size: 1em;
+    color:#FFFFFF;
+    font-family: Andale Mono
+}
+
+h7 {
     font-size: 1em;
     color:#FFFFFF;
     font-family: Andale Mono
@@ -35,5 +46,5 @@ input#submit{
   background:none;
   border:none;
   font-size:1em;
-  color:blue;
+  color:white;
 }
