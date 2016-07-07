@@ -1,6 +1,6 @@
 <head>
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.indigo-pink.min.css">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.indigo-yellow.min.css">
   <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
     <style>
       body {
@@ -21,9 +21,9 @@
       </ul>
     </div>
   <% end %>
-<p><p><h6>
+<p><p>
 
-
+<h6>
   <div class="mdl-textfield mdl-js-textfield">
     <%= f.label :"YOUR ADDRESS", :class=>"mdl-textfield__label"%>
     <%= f.text_field :address_1, :class=>"mdl-textfield__input", :required => true%>
@@ -43,18 +43,18 @@
     <%= f.label "Number of Places", :class=>"mdl-textfield__label" %>
     <%= f.number_field :results, :class=>"mdl-textfield__input", :required => true %>
   </div>
+  </h6>
 <p>
 <p>
-<!-- <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"> -->
+<!--  -->
 
 
 
 
-  <input type="submit" name="submit" value=" Find Places " id="submit" /><!-- 
-</button>
- -->
+  <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"><input type="submit" name="submit" value=" Find Places " id="submit" />
+  </button>
   
     
 
-  </h6>
+ 
 <% end %>

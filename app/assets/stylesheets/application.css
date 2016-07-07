@@ -20,7 +20,7 @@ body {
 	text-align: center;
     margin: auto;
     width: 50%;
-    color:#FEEA39;
+    color:#FFFFFF;
     
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -34,25 +34,21 @@ body {
 h6 {
     font-size: 1em;
     color:#FFFFFF;
-    font-family: 'Inconsolata', monospace;
 }
 
 h7 {
     font-size: 1em;
     color:#FFFFFF;
-    font-family: 'Inconsolata', monospace;
 }
 
 
 #submit {
-    background-color: #FEEA39;
     font-size: 1em;
-    font-family: 'Inconsolata', monospace;
-    border-radius:5px;
     color: #000000;
     text-decoration: none;
     cursor: pointer;
     border:none;
+    background-color: transparent;
 }
 
 
@@ -60,6 +56,4 @@ h7 {
 #submit:hover {
     border: none;
     color:#000000 ;
-    background:#FD9729;
-    box-shadow: 0px 0px 1px #777;
 }

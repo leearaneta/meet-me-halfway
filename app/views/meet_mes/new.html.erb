@@ -1,14 +1,17 @@
 <head><style>
     body 
-    {background-color: #4285F4;}
-    </style>
+/*    {background-color: #4285F4;}
+*/    </style>
   </head>
 <body>
- <h2>meet me halfway</h2>
-<!--  <img src="run2.png">
- --> <%= @warning%>
+ <h3 style="font-family:Verdana;">Meet Me Halfway</h3>
+<!-- <img src="run2.png"></img>
+ -->  
+ <%= @warning%>
 <p> 
 <%= render 'form', meet_me: @meet_me %>
 
 <h7><%= link_to 'Back', meet_mes_path %></h7>
 </body>
+
+

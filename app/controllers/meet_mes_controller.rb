@@ -12,8 +12,9 @@ class MeetMesController < ApplicationController
   def show
     midpoint = @meet_me.find_midpoint
     if midpoint[0].nan?
-      @warning = 'Please input valid results.'
-      redirect_to new_meet_me_path
+      @warning = 'Please input valid addresses.'
+      render 'meet_mes/new'
+      # new_meet_me_path
     else
       address = @meet_me.find_address(midpoint)
       params = @meet_me.find_params
