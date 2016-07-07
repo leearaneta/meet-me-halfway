@@ -10,28 +10,32 @@
       </ul>
     </div>
   <% end %>
-
+<p><p><h6>
   <div class="field">
-    <%= f.label :address_1 %>
-    <%= f.text_field :address_1 %>
-  </div>
+ 
+    <%= f.label :"Your Address" %>
+    <%= f.text_field :address_1, :required => true%>
 
+  </div>
+<p>
   <div class="field">
-    <%= f.label :address_2 %>
-    <%= f.text_field :address_2 %>
+    <%= f.label :"Your friend's address" %>
+    <%= f.text_field :address_2, :required => true %>
   </div>
-
+<p>
   <div class="field">
-    <%= f.label :term %>
-    <%= f.text_field :term %>
+    <%= f.label :"Category" %>
+    <%= f.text_field :term, :required => true %>
   </div>
-
+<p>
   <div class="field">
-    <%= f.label :results %>
-    <%= f.number_field :results %>
+    <%= f.label "Number of Results" %>
+    <%= f.number_field :results, :required => true %>
   </div>
+<p>
+  <div class="actions"><p>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <%= f.submit 'Find Places' %>
+
+  </div></h6>
 <% end %>

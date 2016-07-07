@@ -1,4 +1,6 @@
 class MeetMe < ApplicationRecord
+
+
   def find_midpoint
     array = [self.address_1, self.address_2]
     Geocoder::Calculations.geographic_center(array)

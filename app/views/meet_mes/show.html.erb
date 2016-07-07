@@ -1,4 +1,4 @@
-<h2><%= "#{@yelp.count} Places for #{@term.capitalize} "%></h2>
+<h2><%= "#{@yelp.count} Places for #{@term.capitalize}"%></h2>
 <h4><%="Between #{@meet_me.address_1} and #{@meet_me.address_2}" %></h4>
 <% @yelp.each do |business|%>
 <h2><%= link_to business.name, business.url%></h2>
