@@ -14,19 +14,19 @@
  *= require_self
  */
 
-      
+
 body {
 	padding-top: 100px;
 	text-align: center;
     margin: auto;
     width: 50%;
-    color:#FFFFFF;
-    background-image: url("sky.jpg");
+    color:#FEEA39;
+    
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100%;
-    background-color:#C7D6E1; 
-	font-family: 'Cutive Mono', monospace;
+    background-color:#FF5252; 
+	font-family: 'Inconsolata', monospace;
 
 }
 /*#32415A*/
@@ -40,15 +40,16 @@ h6 {
 h7 {
     font-size: 1em;
     color:#FFFFFF;
-    font-family: Andale Mono
+    font-family: 'Inconsolata', monospace;
 }
 
+
 #submit {
-    background-color: #1A3A6D;
+    background-color: #FEEA39;
     font-size: 1em;
-    font-family: Andale Mono;
+    font-family: 'Inconsolata', monospace;
     border-radius:5px;
-    color: #fff;
+    color: #000000;
     text-decoration: none;
     cursor: pointer;
     border:none;
@@ -58,7 +59,7 @@ h7 {
 
 #submit:hover {
     border: none;
-    color:#1A3A6D ;
-    background:#Ffffff;
+    color:#000000 ;
+    background:#FD9729;
     box-shadow: 0px 0px 1px #777;
 }
