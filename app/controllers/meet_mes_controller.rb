@@ -10,12 +10,17 @@ class MeetMesController < ApplicationController
   # GET /meet_mes/1
   # GET /meet_mes/1.json
   def show
-
+    byebug
     midpoint = @meet_me.find_midpoint
-    address = @meet_me.find_address(midpoint)
-    params = @meet_me.find_params
-    @term = params[:term]
-    @yelp = yelp_query(address, params).businesses
+    if midpoint[0].nan?
+      @warning = 'Please input valid results.'
+      redirect_to new_meet_me_path
+    else
+      address = @meet_me.find_address(midpoint)
+      params = @meet_me.find_params
+      @term = params[:term]
+      @yelp = yelp_query(address, params).businesses
+    end
     #byebug
 
   end

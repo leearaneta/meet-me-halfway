@@ -13,3 +13,27 @@
  *= require_tree .
  *= require_self
  */
+
+
+body {
+	padding-top: 100px;
+	text-align: center;
+    margin: auto;
+    width: 50%;
+    color:#32415A;
+    background-color:#C7D6E1; 
+    font-family: Andale Mono
+}
+
+h6 {
+    font-size: 1em;
+    color:#FFFFFF;
+    font-family: Andale Mono
+}
+
+input#submit{
+  background:none;
+  border:none;
+  font-size:1em;
+  color:blue;
+}

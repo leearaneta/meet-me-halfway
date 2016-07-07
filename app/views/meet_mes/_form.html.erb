@@ -2,7 +2,6 @@
   <% if meet_me.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(meet_me.errors.count, "error") %> prohibited this meet_me from being saved:</h2>
-
       <ul>
       <% meet_me.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -10,28 +9,28 @@
       </ul>
     </div>
   <% end %>
-
+<p><p><h6>
   <div class="field">
     <%= f.label :"Your Address" %>
-    <%= f.text_field :address_1 %>
+    <%= f.text_field :address_1, :required => true%>
   </div>
-
+<p>
   <div class="field">
-    <%= f.label :"Your Friend's Address" %>
-    <%= f.text_field :address_2 %>
+    <%= f.label :"Your friend's address" %>
+    <%= f.text_field :address_2, :required => true %>
   </div>
-
+<p>
   <div class="field">
     <%= f.label :"Category" %>
-    <%= f.text_field :term %>
+    <%= f.text_field :term, :required => true %>
   </div>
-
+<p>
   <div class="field">
     <%= f.label :"Number of Results" %>
-    <%= f.number_field :results %>
+    <%= f.number_field :results, :required => true %>
   </div>
-
-  <div class="actions">
-    <%= f.submit 'Submit' %>
-  </div>
+<p>
+  <div class="actions"><p>
+    <%= f.submit 'Find Places' %>
+  </div></h6>
 <% end %>
