@@ -14,7 +14,7 @@
  *= require_self
  */
 
-
+      
 body {
 	padding-top: 100px;
 	text-align: center;
@@ -26,14 +26,15 @@ body {
     background-attachment: fixed;
     background-size: 100%;
     background-color:#C7D6E1; 
-    font-family: Andale Mono
+	font-family: 'Cutive Mono', monospace;
+
 }
 /*#32415A*/
 
 h6 {
     font-size: 1em;
     color:#FFFFFF;
-    font-family: Andale Mono
+    font-family: 'Inconsolata', monospace;
 }
 
 h7 {
