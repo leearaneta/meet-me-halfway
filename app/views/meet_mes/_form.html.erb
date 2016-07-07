@@ -1,9 +1,7 @@
 <head>
-    
-    <link href="https://fonts.googleapis.com/css?family=Assistant:200|Cutive+Mono|Inconsolata" rel="stylesheet">
-    
-
-
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.indigo-pink.min.css">
+  <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
     <style>
       body {
         font-family: 'Inconsolata', monospace;
@@ -16,7 +14,6 @@
   <% if meet_me.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(meet_me.errors.count, "error") %> prohibited this meet_me from being saved:</h2>
-
       <ul>
       <% meet_me.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -25,31 +22,34 @@
     </div>
   <% end %>
 <p><p><h6>
-  <div class="field">
- 
-    <%= f.label :"YOUR ADDRESS" %>
-    <%= f.text_field :address_1, :required => true%>
 
+
+  <div class="mdl-textfield mdl-js-textfield">
+    <%= f.label :"YOUR ADDRESS", :class=>"mdl-textfield__label"%>
+    <%= f.text_field :address_1, :class=>"mdl-textfield__input", :required => true%>
   </div>
 <p>
-  <div class="field">
-    <%= f.label :"Your friend's address" %>
-    <%= f.text_field :address_2, :required => true %>
+  <div class="mdl-textfield mdl-js-textfield">
+    <%= f.label :"Your friend's address", :class=>"mdl-textfield__label" %>
+    <%= f.text_field :address_2, :class=>"mdl-textfield__input", :required => true %>
   </div>
 <p>
-  <div class="field">
-    <%= f.label :"Category" %>
-    <%= f.text_field :term, :required => true %>
+  <div class="mdl-textfield mdl-js-textfield">
+    <%= f.label :"Category", :class=>"mdl-textfield__label" %>
+    <%= f.text_field :term, :class=>"mdl-textfield__input", :required => true %>
   </div>
 <p>
-  <div class="field">
-    <%= f.label "Number of Results" %>
-    <%= f.number_field :results, :required => true %>
+  <div class="mdl-textfield mdl-js-textfield">
+    <%= f.label "Number of Places", :class=>"mdl-textfield__label" %>
+    <%= f.number_field :results, :class=>"mdl-textfield__input", :required => true %>
   </div>
 <p>
 <p>
 <!-- <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"> -->
-  
+
+
+
+
   <input type="submit" name="submit" value=" Find Places " id="submit" /><!-- 
 </button>
  -->

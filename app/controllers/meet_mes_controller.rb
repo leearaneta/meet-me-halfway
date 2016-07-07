@@ -10,7 +10,6 @@ class MeetMesController < ApplicationController
   # GET /meet_mes/1
   # GET /meet_mes/1.json
   def show
-
     midpoint = @meet_me.find_midpoint
     if midpoint[0].nan?
       @warning = 'Please input valid results.'

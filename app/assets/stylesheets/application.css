@@ -26,7 +26,7 @@ body {
     background-attachment: fixed;
     background-size: 100%;
     background-color:#FF5252; 
-	font-family: 'Inconsolata', monospace;
+	font-family: 'Inconsolata', monospace!important;
 
 }
 /*#32415A*/
