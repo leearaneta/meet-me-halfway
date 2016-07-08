@@ -1,0 +1,5 @@
+<%= form_tag("/meetmehalfway", method: "post") do %>
+  <%= label_tag(:people, "How many people?") %>
+  <%= text_field_tag(:people) %>
+  <%= submit_tag("Submit") %>
+<% end %>

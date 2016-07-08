@@ -10,15 +10,12 @@
     </div>
   <% end %>
 <p><p><h6>
-  <div class="field">
-    <%= f.label :"Your Address" %>
-    <%= f.text_field :address_1, :required => true%>
-  </div>
-<p>
-  <div class="field">
-    <%= f.label :"Your friend's address" %>
-    <%= f.text_field :address_2, :required => true %>
-  </div>
+    <%= f.fields_for :addresses do |addresses_form| %>
+      <li>
+        <%= addresses_form.label :Address %>
+        <%= addresses_form.text_field :name %>
+      </li>
+    <% end %>
 <p>
   <div class="field">
     <%= f.label :"Category" %>
