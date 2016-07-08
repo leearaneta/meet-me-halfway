@@ -1,5 +1,4 @@
-
-<h1><%= "#{@yelp.count.humanize.capitalize} Places for #{@term.capitalize}" %></h1>
+<h1><%= "#{@yelp.count.humanize.capitalize} #{@places} for #{@term.capitalize}" %></h1>
 <p>between
   <% @meet_me.addresses.each do |address| %>
   <br><%= address.name %>
@@ -11,6 +10,6 @@
 <p><%= business.display_phone%>
 <p><%= "#{business.rating} stars with #{business.review_count} reviews" %>
 <p><%= "\"#{business.snippet_text}\"" %>
-
-
 <% end %>
+
+<p><%= link_to 'back', meetmehalfway_path %></p>

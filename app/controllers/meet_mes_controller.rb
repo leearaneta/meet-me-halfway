@@ -6,38 +6,39 @@ class MeetMesController < ApplicationController
 
   def pass
     @carrier = Carrier.create(params.permit(:quantity))
-    redirect_to new_meet_me_path(@carrier)
+    redirect_to new_meet_me_path
   end
 
   def new
-    byebug
-    amount = Carrier.find(params[:id]).quantity
     @meet_me = MeetMe.new
     amount.times { @meet_me.addresses.build }
   end
 
   def create
-    byebug
     @meet_me = MeetMe.new(meet_me_params)
-    @meet_me.addresses_attributes= meet_me_params[:addresses_attributes]
+    # byebug
     @meet_me.addresses.each do |address|
       address.meet_me = @meet_me
     end
-    @meet_me.save
-    redirect_to meet_me_path(@meet_me)
+    if @meet_me.find_midpoint[0].nan?
+      @meet_me.errors.add(:addresses, "Please input valid addresses.")
+      @meet_me.addresses = []
+      byebug
+      amount.times { @meet_me.addresses.build }
+      render :new
+    else
+      @meet_me.save
+      redirect_to meet_me_path(@meet_me)
+    end
   end
 
   def show
     midpoint = @meet_me.find_midpoint
-    if midpoint[0].nan?
-      @warning = 'Please input valid addresses.'
-      redirect_to new_meet_me_path(@meet_me)
-    else
-      address = @meet_me.find_address(midpoint)
-      params = @meet_me.find_params
-      @term = params[:term]
-      @yelp = yelp_query(address, params).businesses
-    end
+    address = @meet_me.find_address(midpoint)
+    params = @meet_me.find_params
+    @term = params[:term]
+    @yelp = yelp_query(address, params).businesses
+    @yelp.count == 1 ? @places = "Place" : @places = "Places"
   end
 
   private
@@ -52,5 +53,9 @@ class MeetMesController < ApplicationController
 
     def meet_me_params
       params.require(:meet_me).permit(:term, :results, addresses_attributes: [:name])
+    end
+
+    def amount
+      Carrier.last.quantity
     end
 end
