@@ -1,21 +1,16 @@
 
 <h1><%= "#{@yelp.count.humanize.capitalize} Places for #{@term.capitalize}" %></h1>
-<h4>between ur mom lol</h4>
+<p>between
+  <% @meet_me.addresses.each do |address| %>
+  <br><%= address.name %>
+  <% end %>
+</p>
 <% @yelp.each do |business|%>
 <h2><%= link_to business.name, business.url%></h2>
 <p><%= business.location.display_address.join(" ") %>
-<p><%= business.display_phone.slice(1..14)%>
+<p><%= business.display_phone%>
 <p><%= "#{business.rating} stars with #{business.review_count} reviews" %>
 <p><%= "\"#{business.snippet_text}\"" %>
-<!-- <p><img src= <%=business.image_url%>><p> -->
+
 
 <% end %>
-<!-- - name
-- address
-- rating
-- number of reviews
-- text snippet
-- link to homepage
-- picture
-- phone
-- image url -->

@@ -10,21 +10,21 @@
     </div>
   <% end %>
 <p><p><h6>
+  <%= "enter #{@meet_me.addresses.size.humanize} addresses:" %><br>
     <%= f.fields_for :addresses do |addresses_form| %>
-      <li>
-        <%= addresses_form.label :Address %>
+      <br>
         <%= addresses_form.text_field :name %>
-      </li>
+      </br>
     <% end %>
 <p>
   <div class="field">
-    <%= f.label :"Category" %>
+    <%= "category" %>
     <%= f.text_field :term, :required => true %>
   </div>
 <p>
   <div class="field">
-    <%= f.label :"Number of Results" %>
-    <%= f.number_field :results, :required => true %>
+    <%= "number of results" %>
+    <%= f.number_field :results, :value => 1, :min => 1, :required => true %>
   </div>
 <p>
   <div class="actions"><p>

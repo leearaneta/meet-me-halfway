@@ -17,6 +17,7 @@ class MeetMe < ApplicationRecord
     params = {}
     params[:term] = self.term
     params[:limit] = self.results
+    params[:sort] = 2
     params
   end
 
