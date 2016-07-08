@@ -1,3 +1,5 @@
+require 'googlestaticmap'
+
 class MeetMesController < ApplicationController
   before_action :set_meet_me, only: [:show, :edit, :update, :destroy]
 
@@ -16,14 +18,12 @@ class MeetMesController < ApplicationController
 
   def create
     @meet_me = MeetMe.new(meet_me_params)
-    # byebug
     @meet_me.addresses.each do |address|
       address.meet_me = @meet_me
     end
     if @meet_me.find_midpoint[0].nan?
       @meet_me.errors.add(:addresses, "Please input valid addresses.")
       @meet_me.addresses = []
-      byebug
       amount.times { @meet_me.addresses.build }
       render :new
     else
@@ -39,6 +39,13 @@ class MeetMesController < ApplicationController
     @term = params[:term]
     @yelp = yelp_query(address, params).businesses
     @yelp.count == 1 ? @places = "Place" : @places = "Places"
+    map = @meet_me.generate_map
+    @yelp.each do |business|
+      add = business.location.display_address.join(" ")
+      map.markers << MapMarker.new(:color => "red", :location => MapLocation.new(:address => add))
+    end
+    @img_url = map.url
+
   end
 
   private

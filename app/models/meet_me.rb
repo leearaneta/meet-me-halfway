@@ -22,10 +22,14 @@ class MeetMe < ApplicationRecord
     params
   end
 
-  # def addresses_must_be_valid
-  #   unless !self.find_midpoint.nan?
-  #     self.errors.add(:addresses, "Addresses must be valid.")
-  #   end
-  # end
+  def generate_map
+    map = GoogleStaticMap.new(:api_key => "AIzaSyDEsYgk8H0XMACDf4Wk4SxW4P05UQkZmXY")
+    self.addresses.each do |add|
+      map.markers << MapMarker.new(:color => "purple", :location => MapLocation.new(:address => add.name))
+    end
+    map
+  end
+
+
 
 end

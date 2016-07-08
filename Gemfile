@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'google-api-client'
+gem 'googlestaticmap'
 gem 'humanize'
 gem 'geocoder'
 gem 'yelp', require: 'yelp'
