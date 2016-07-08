@@ -24,7 +24,7 @@ class MeetMesController < ApplicationController
       address.meet_me = @meet_me
     end
     @meet_me.save
-    redirect_to meet_me_path(@meet_me)
+    render meet_me_path(@meet_me) #redirect_to
   end
 
   def show
