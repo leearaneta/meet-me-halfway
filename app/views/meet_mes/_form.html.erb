@@ -7,25 +7,34 @@
       </ul>
     </div>
   <% end %>
-<p><p><h6>
-  <%= "enter #{@meet_me.addresses.size.humanize} addresses:" %><br>
-    <%= f.fields_for :addresses do |addresses_form| %>
+<p><p>
+<div class="mdl-textfield">
+  <%= f.label :"enter #{@meet_me.addresses.size.humanize} addresses", :class=>"mdl-textfield__label" %>
+    <%= f.fields_for :addresses do |f| %>
       <br>
-        <%= addresses_form.text_field :name %>
-      </br>
+      <br>
+      <%= f.text_field :name, :class=>"mdl-textfield__input", :required => true%>
+      
     <% end %>
-<p>
-  <div class="field">
-    <%= "category" %>
-    <%= f.text_field :term, :required => true %>
+  </div>
+<br>
+  <div class="mdl-textfield mdl-js-textfield">
+    <%= f.label :"Category", :class=>"mdl-textfield__label" %>
+    <%= f.text_field :term, :class=>"mdl-textfield__input", :required => true%>
   </div>
 <p>
-  <div class="field">
-    <%= "number of results" %>
-    <%= f.number_field :results, :value => 1, :min => 1, :required => true %>
+  <div class="mdl-textfield mdl-js-textfield">
+    <%= f.label :"Number of Places", :class=>"mdl-textfield__label" %>
+    <%= f.number_field :results, :class=>"mdl-textfield__input", :required => true %>
   </div>
 <p>
+
+
+
   <div class="actions"><p>
     <%= f.submit 'Find Places' %>
-  </div></h6>
+  </div>
+
+
+  </h6>
 <% end %>
