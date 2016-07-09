@@ -18,13 +18,9 @@ class MeetMesController < ApplicationController
 
   def create
     @meet_me = MeetMe.new(meet_me_params)
-    @meet_me.addresses.each do |address|
-      address.meet_me = @meet_me
-    end
-    if @meet_me.find_midpoint[0].nan?
-      @meet_me.errors.add(:addresses, "Please input valid addresses.")
-      @meet_me.addresses = []
-      amount.times { @meet_me.addresses.build }
+    @meet_me.associate_addresses
+    if @meet_me.find_error
+      @meet_me.reset
       render :new
     else
       @meet_me.save
@@ -33,26 +29,14 @@ class MeetMesController < ApplicationController
   end
 
   def show
-    midpoint = @meet_me.find_midpoint
-    address = @meet_me.find_address(midpoint)
-    params = @meet_me.find_params
-    @term = params[:term]
-    @yelp = yelp_query(address, params).businesses
+    @yelp = @meet_me.yelp_query
     @yelp.count == 1 ? @places = "Place" : @places = "Places"
     map = @meet_me.generate_map
-    @yelp.each do |business|
-      add = business.location.display_address.join(" ")
-      map.markers << MapMarker.new(:color => "red", :location => MapLocation.new(:address => add))
-    end
+    add_yelp_markers_to_map(@yelp, map)
     @img_url = map.url
-
   end
 
   private
-
-    def yelp_query(address, params)
-      Yelp.client.search(address, params)
-    end
 
     def set_meet_me
       @meet_me = MeetMe.find(params[:id])
@@ -62,7 +46,15 @@ class MeetMesController < ApplicationController
       params.require(:meet_me).permit(:term, :results, addresses_attributes: [:name])
     end
 
+    def add_yelp_markers_to_map(yelp, map)
+      yelp.each do |business|
+        add = business.location.display_address.join(" ")
+        map.markers << MapMarker.new(:color => "red", :location => MapLocation.new(:address => add))
+      end
+    end
+
     def amount
       Carrier.last.quantity
     end
+
 end
