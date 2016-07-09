@@ -38,14 +38,21 @@ class MeetMesController < ApplicationController
     params = @meet_me.find_params
     @term = params[:term]
     @yelp = yelp_query(address, params).businesses
-    @yelp.count == 1 ? @places = "Place" : @places = "Places"
-    map = @meet_me.generate_map
-    @yelp.each do |business|
-      add = business.location.display_address.join(" ")
-      map.markers << MapMarker.new(:color => "red", :location => MapLocation.new(:address => add))
+    byebug
+    if @yelp.count == 0
+      @meet_me.errors.add(:term, "Sorry, there are no vendors in this category around this area!")
+      render :new
+      #this renders the 'meetmehalfway/:id' page
+      #how do i get to the 'meetmehalfway/new' page?
+    else
+      @yelp.count == 1 ? @places = "Place" : @places = "Places"
+      map = @meet_me.generate_map
+      @yelp.each do |business|
+        add = business.location.display_address.join(" ")
+        map.markers << MapMarker.new(:color => "red", :location => MapLocation.new(:address => add))
+      end
+      @img_url = map.url
     end
-    @img_url = map.url
-
   end
 
   private

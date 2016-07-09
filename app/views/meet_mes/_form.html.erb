@@ -25,16 +25,11 @@
 <p>
   <div class="mdl-textfield mdl-js-textfield">
     <%= f.label :"Number of Places", :class=>"mdl-textfield__label" %>
-    <%= f.number_field :results, :class=>"mdl-textfield__input", :required => true %>
+    <%= f.number_field :results, :class=>"mdl-textfield__input", :max=>"10",:required => true %>
   </div>
 <p>
-
-
-
   <div class="actions"><p>
     <%= f.submit 'Find Places' %>
   </div>
-
-
   </h6>
 <% end %>

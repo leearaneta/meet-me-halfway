@@ -1,7 +1,6 @@
 class MeetMe < ApplicationRecord
   has_many :addresses
   accepts_nested_attributes_for :addresses
-  # validates :addresses_must_be_valid
 
   def find_midpoint
     array = self.addresses.map do |address|
