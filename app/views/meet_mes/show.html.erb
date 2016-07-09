@@ -6,7 +6,7 @@
 <font size="6"><%= "#{@yelp.count.humanize.capitalize} #{@places} for #{@term.capitalize}" %></font><p>
 <p>between
   <% @meet_me.addresses.each do |address| %>
-  <br><%= address.name %>
+  <p><%= address.name %>
   <% end %>
 </p>
 <p>. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .</p> 
