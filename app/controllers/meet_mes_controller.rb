@@ -34,6 +34,7 @@ class MeetMesController < ApplicationController
     map = @meet_me.generate_map
     add_yelp_markers_to_map(@yelp, map)
     @img_url = map.url
+    byebug
   end
 
   private

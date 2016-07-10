@@ -1,0 +1,35 @@
+<%= form_for(@meet_me) do |f| %>
+  <% if @meet_me.errors.any? %>
+    <div id="error_explanation">
+      <% meet_me.errors.messages.values.each do |message| %>
+        <br><%= message.join %></br>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<p><p>
+<div class="mdl-textfield">
+  <%= f.label :"enter #{@meet_me.addresses.size.humanize} addresses", :class=>"mdl-textfield__label" %>
+    <%= f.fields_for :addresses do |f| %>
+      <br>
+      <br>
+      <%= f.text_field :name, :class=>"mdl-textfield__input", :required => true%>
+      
+    <% end %>
+  </div>
+<br>
+  <div class="mdl-textfield mdl-js-textfield">
+    <%= f.label :"Category", :class=>"mdl-textfield__label" %>
+    <%= f.text_field :term, :class=>"mdl-textfield__input", :required => true%>
+  </div>
+<p>
+  <div class="mdl-textfield mdl-js-textfield">
+    <%= f.label :"Number of Places", :class=>"mdl-textfield__label" %>
+    <%= f.number_field :results, :class=>"mdl-textfield__input", :max=>"10",:required => true %>
+  </div>
+<p>
+  <div class="actions"><p>
+    <%= f.submit 'Find Places' %>
+  </div>
+  </h6>
+<% end %>
