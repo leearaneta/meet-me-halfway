@@ -2,7 +2,7 @@
 <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
 
 <center>
-<font size="6"><%= "#{@yelp.count.humanize.capitalize} #{@places} for #{@meet_me.term.capitalize}" %></font><p>
+<font size="6"><%= "#{@yelp.count.humanize.capitalize} #{@places} for #{@meet_me.term.split.map { |word| word.capitalize }.join(" ")}" %></font><p>
 <p>between
   <% @meet_me.addresses.each do |address| %>
   <p><%= address.name %>
