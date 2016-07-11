@@ -9,7 +9,7 @@
   <% end %>
 <p><p>
 <div class="mdl-textfield">
-  <%= f.label :"enter #{@meet_me.addresses.size.humanize} addresses", :class => "mdl-textfield__label" %>
+  <%= f.label :"enter #{@meet_me.addresses.size.humanize} addresses" %>
     <%= f.fields_for :addresses do |f| %>
       <br>
       <br>
@@ -18,12 +18,12 @@
   </div>
 <br>
   <div class="mdl-textfield mdl-js-textfield">
-    <%= f.label :"Category", :class => "mdl-textfield__label" %>
+    <%= f.label :"Category" %>
     <%= f.text_field :term, :class => "mdl-textfield__input"%>
   </div>
 <p>
   <div class="mdl-textfield mdl-js-textfield">
-    <%= f.label :"Number of Places", :class => "mdl-textfield__label" %>
+    <%= f.label :"Number of Places" %>
     <%= f.number_field :results, :class => "mdl-textfield__input", :value => "1", :max => "10", :required => true %>
   </div>
 <p>
