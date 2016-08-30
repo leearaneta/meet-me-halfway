@@ -1,6 +1,6 @@
 # README
 ##Meet Me Halfway
-Enter you and your friends' addresses (up to 10) to where to hangout around the midpoint!
+Enter you and your friends' addresses (up to 10) to find out where to hangout around the midpoint!
 
 ##Built with:
 Ruby, Yelp API, Geocoder API, GoogleMaps 
