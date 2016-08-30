@@ -51,7 +51,7 @@ class MeetMe < ApplicationRecord
   end
 
   def generate_map
-    map = GoogleStaticMap.new(:api_key => "AIzaSyDEsYgk8H0XMACDf4Wk4SxW4P05UQkZmXY")
+    map = GoogleStaticMap.new(:api_key => "AIzaSyCc4G3qvx_jiAqH-pJrPq_o7Dmma2Q14Ic")
     self.addresses.each do |add|
       map.markers << MapMarker.new(:color => "purple", :location => MapLocation.new(:address => add.name))
     end
