@@ -3,7 +3,7 @@ This is a project completed at Flatiron School by two students, Lee Araneta and 
 
 ##Meet Me Halfway
 Enter you and your friends' addresses (up to 10) to find out where to hangout around your midpoint!
-![meet_me](http://g.recordit.co/oed74Qq72B.gif)
+![meet_me](http://g.recordit.co/i2WTmvxUYX.gif)
 ##Built with:
 Ruby, Yelp API, Geocoder API, GoogleMaps
 
