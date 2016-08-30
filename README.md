@@ -1,24 +1,10 @@
 # README
+##Meet Me Halfway
+Enter you and your friends' addresses (up to 10) to where to hangout around the midpoint!
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+##Built with:
+Ruby, Yelp API, Geocoder API, GoogleMaps 
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+##Collaborators
+[Lee Araneta](https://github.com/leearaneta/)
+[Yichen Yang](https://github.com/yicheny001/)
