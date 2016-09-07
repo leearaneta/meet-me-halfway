@@ -1,5 +1,5 @@
 # README
-This is a project completed at Flatiron School by two students, Lee Araneta and Yichen Yang, of Web Development June 2016 cohort.
+This is a project completed at the Flatiron School by two students, Lee Araneta and Yichen Yang, of Web Development June 2016 cohort.
 Checkout the React-Redux version [here](https://github.com/yicheny001/meet-me-half-way-react)!
 
 ##Meet Me Halfway
