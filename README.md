@@ -5,7 +5,7 @@ Checkout the React-Redux version [here](https://github.com/yicheny001/meet-me-ha
 ##Meet Me Halfway
 Enter you and your friends' addresses (up to 10) to find out where to hangout around your midpoint!
 
-![meet_me](https://postimg.org/image/6oi8f1j5f/)
+![meet_me](https://s21.postimg.org/95tzmb31z/i2_WTmvx_UYX_1.gif)
 ##Built with:
 Ruby, Yelp API, Geocoder API, GoogleMaps
 
